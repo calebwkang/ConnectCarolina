@@ -2,28 +2,26 @@ package main;
 
 import java.util.Iterator;
 
-public class GradeIterator extends StudentIterator implements Iterator<Student> {
+import main.Student.Year;
 
-	private double lower;
-	private double higher;
+public class YearIterator extends StudentIterator implements Iterator<Student> {
+
+	private Year year;
 	
-	
-	
-	public GradeIterator(double lower, double higher, Class class1) {
+	public YearIterator(Student.Year year, Class class1) {
 		super(class1);
-		this.lower = lower;
-		this.higher = higher;
+		this.year = year;
+		
 	}
-	
-	
 	@Override
 	public boolean hasNext() {
 		Student[] roster = class1.getRoster();
 		normalize();
 		
 		for (int i = 0; i < roster.length; i++) {
-			if (roster[current].getGPA() > lower && roster[current].getGPA() < higher) {
+			if (roster[i].getYear() == year) {
 				return true;
+				
 			}
 			
 			current++;
@@ -40,6 +38,7 @@ public class GradeIterator extends StudentIterator implements Iterator<Student> 
 			current++;
 			return next;
 		}
+		
 		
 		return null;
 	}

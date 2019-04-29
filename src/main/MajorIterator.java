@@ -2,17 +2,13 @@ package main;
 
 import java.util.Iterator;
 
-public class GradeIterator extends StudentIterator implements Iterator<Student> {
-
-	private double lower;
-	private double higher;
+public class MajorIterator extends StudentIterator implements Iterator<Student> {
+	private String major;
 	
 	
-	
-	public GradeIterator(double lower, double higher, Class class1) {
+	public MajorIterator(String major, Class class1) {
 		super(class1);
-		this.lower = lower;
-		this.higher = higher;
+		this.major = major;
 	}
 	
 	
@@ -22,12 +18,12 @@ public class GradeIterator extends StudentIterator implements Iterator<Student> 
 		normalize();
 		
 		for (int i = 0; i < roster.length; i++) {
-			if (roster[current].getGPA() > lower && roster[current].getGPA() < higher) {
+			if (roster[i].getMajor().equals(major)) {
 				return true;
 			}
-			
 			current++;
 		}
+		
 		
 		return false;
 	}
@@ -38,10 +34,10 @@ public class GradeIterator extends StudentIterator implements Iterator<Student> 
 			Student[] roster = class1.getRoster();
 			Student next = roster[current];
 			current++;
-			return next;
 		}
 		
 		return null;
+		
 	}
 
 }
