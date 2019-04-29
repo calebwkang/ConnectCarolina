@@ -5,6 +5,6 @@ We an abstraction for a catalog of classes, with each class having many a number
 
 For Students by Year in School, GPA, and Major
   
-For Classes: by GenEds fulfilled, level, deptarment
+For Classes: by GenEds fulfilled, level, department
   
   
