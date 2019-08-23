@@ -4,6 +4,10 @@ public class DeptIterator extends ClassIterator {
 
 	private String dept;
 	
+	public static void main(String[] args) {
+		System.out.println("Hello World!")
+	}
+	
 	public DeptIterator(String dept, Catalog catalog) {
 		super(catalog);
 		this.dept = dept;

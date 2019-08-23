@@ -2,6 +2,9 @@ package main;
 
 import java.util.Iterator;
 
+
+// these edits are from brian
+
 abstract public class ClassIterator implements Iterator<Class> {
 
 	/*protected so subclasses can easily access*/
